@@ -21,16 +21,23 @@
               </p>
               <p class="alert alert-warning quoteOrange">In Snap<em>!</em> it's common to have text between function parameters, such as the <img src="/bjc-r/img/blocks/mod.png" alt="Snap! mod block" />. In Python, all parameters must come at the end of a function, between parentheses<code>()</code>.
               </p>
+
+              <p> In order to call a function, type the function name, followed by the inputs in parentheses. For example, if you wanted to run <code>count_up</code> above with <code>num = 4</code>, you would type <code>count_up(4)</code>.</p>
+              <br>
+
+              <h3>For Loop</h3>
+
               <p>
-                  <b><code>For</code> Loop:</b> The <code>for</code> loop in Python works similarly to our Snap<em>!</em> <code>for</code> loop with some key differences. To have the index variable <code>i</code> increment from <code>1 to num</code>, we have to create an <b>iterable</b>. For now, think of an iterable as anything that can act like a list of items. Starting with the first item, <code>i</code> takes each consecutive item of the list as its value. The <code>range(x, y)</code> function receives two numbers and returns an iterable of all numbers beginning with <code>x</code> and ending with <code>y-1</code>.
+                  The <code>for</code> loop in Python works similarly to our Snap<em>!</em> <code>for</code> loop with some key differences. To have the index variable <code>i</code> increment from <code>1 to num</code>, we have to create an <b>iterable</b>. For now, think of an iterable as anything that can act like a list of items. Starting with the first item, <code>i</code> takes each consecutive item of the list as its value. The <code>range(x, y)</code> function receives two numbers and returns an iterable of all numbers beginning with <code>x</code> and ending with <code>y-1</code>.
               </p>
-              <p>In file: <code>Lab1.py</code></p>
+              <p>In your file <code>lab1.py</code>, copy and paste the following code. </p>
               <p><pre><code>
 def count_up(num):
     for i in range(1, num+1):
         print(i)
               </code></pre></p>
-              <p>Run <code>python -i Lab1.py</code></p>
+              <p>Then, in the terminal run your Python file using the command <code>python -i lab1.py</code>. This will run the code in your file and leave the interpreter open for you, in case you want to run more code.</p>
+              <p> Now that you have your terminal open, you can call <code>count_up</code>. Call <code>count_up(4)</code> and see what it prints! Is this what you expected?</p>
               <pre><code>
 >>> count_up(4)
 1

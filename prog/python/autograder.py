@@ -73,23 +73,11 @@ def main():
         exit()
     testmodule = import_file_or_fail(filename)
 
-    exercise_1 = Exercise("exercise 1: Exponent", testmodule, "exponent")
-    exercise_1.add_test(TestCase((2, 3), 8))
-    exercise_1.add_test(TestCase((5, 0), 1))
-    exercise_1.add_test(TestCase((10, 2), 100))
-    exercise_1.run_tests()
-
-    exercise_2 = Exercise("exercise 2: Reverse String", testmodule, "reverse_string")
+    exercise_2 = Exercise("exercise 3: Reverse String", testmodule, "reverse_string")
     exercise_2.add_test(TestCase(["alonzo"], "oznola"))
     exercise_2.add_test(TestCase(["racecar"], "racecar"))
     exercise_2.add_test(TestCase(["google"], "elgoog"))
     exercise_2.run_tests()
-
-    exercise_3 = Exercise("exercise 3: Palindrome", testmodule, "palindrome")
-    exercise_3.add_test(TestCase(["alonzo"], False))
-    exercise_3.add_test(TestCase(["racecar"], True))
-    exercise_3.add_test(TestCase(["google"], False))
-    exercise_3.run_tests()
 
 if __name__ == "__main__":
     main()

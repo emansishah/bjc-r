@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exponents</title>
+        <script src="/bjc-r/llab/loader.js"></script>
+        <link href="/bjc-r/js-parsons/parsons.css" rel="stylesheet" />
+        <link href="/bjc-r/js-parsons/lib/prettify.css" rel="stylesheet" />
+        <script src="/bjc-r/js-parsons/lib/prettify.js"></script>
+    </head>
+    <body>
+        <h2>Exercise 2: Exponents</h2>
+        <p>Drag and drop the code below to write an <code>exponent(num, power)</code> function that takes two arguments (a number and an exponent value) and returns the computed result. Below are a few example inputs: </p> 
+        <p><pre><code>
+>>> exponent(10, 0)
+1
+>>> exponent(5, 3)
+125
+>>> exponent(2, 10)
+1024
+        </code></pre></p>
+        <p>You can reorder the blocks and drag them to different indentation levels as you wish. You may not use all of the provided lines. </p> 
+        <div id="sortableTrash" class="sortable-code"></div>
+        <div id="sortable" class="sortable-code">
+        </div>
+        <div style="clear:both;"></div>
+        <p style="text-align: center">
+            <a style="background-color:#337ab7;color:white;border-radius: 3px;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;" href="#" id="newInstanceLink">New instance</a>
+            <a style="background-color:#337ab7;color:white;border-radius: 3px;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;" href="#" id="feedbackLink">Get feedback</a>
+        </p>
+        <script src="/bjc-r/js-parsons/lib/jquery.min.js"></script>
+        <script src="/bjc-r/js-parsons/lib/jquery-ui.min.js"></script>
+        <script src="/bjc-r/js-parsons/lib/jquery.ui.touch-punch.min.js"></script>
+        <script src="/bjc-r/js-parsons/lib/underscore-min.js"></script>
+        <script src="/bjc-r/js-parsons/lib/lis.js"></script>
+        <script src="/bjc-r/js-parsons/parsons.js"></script>
+        <script>
+            var initial = 'def exponent(num, power):\n' +
+                      'def exponent(num, power) #distractor\n' +
+                      '  result = 0 #distractor\n' +
+                      '  result = 1\n' +
+                      '  while power > 0:\n' +
+                      '    result = result * 2 #distractor\n' +
+                      '    result = result * num\n' +
+                      '    result = result * power #distractor\n' +
+                      '    power = power - 1\n' +
+                      '  return result' 
+
+        function displayErrors(fb) {
+            if(fb.errors.length > 0) {
+                alert(fb.errors[0]);
+            }
+        } 
+
+        $(document).ready(function(){
+            var parson = new ParsonsWidget({
+                'sortableId': 'sortable',
+                'trashId': 'sortableTrash',
+                'max_wrong_lines': 1,
+                'feedback_cb' : displayErrors
+            });
+            parson.init(initial);
+            parson.shuffleLines();
+            $("#newInstanceLink").click(function(event){
+                event.preventDefault();
+                parson.shuffleLines();
+            });
+            $("#feedbackLink").click(function(event){
+                event.preventDefault();
+                parson.getFeedback();
+            });
+        });
+        </script>
+    </body>
+</html>
